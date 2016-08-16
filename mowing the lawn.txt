@@ -1,0 +1,35 @@
+
+def look_at_grass
+  sample(:ambi_swoosh, rate: 2)
+  sleep 1.5
+end
+
+def sadness
+  sample(:misc_crow, rate: 2)
+  sleep 1.5
+end
+
+def happy
+  sample(:misc_cineboom, rate: 2)
+  sleep 2
+end
+
+
+
+def mow()
+  sample(:ambi_soft_buzz, rate: 0.5)
+  sleep 1.5
+end
+
+7.times do
+  look_at_grass
+  grass_high = [true, false].choose
+  if grass_high == true
+    sadness
+    mow()
+  else
+    happy
+  end
+end
+
+
