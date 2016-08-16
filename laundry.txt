@@ -1,0 +1,39 @@
+def wear(smell)
+  sample(:bass_drop_c, rate: smell)
+  sleep(2/smell)
+end
+
+def wash(temperature)
+  play(temperature)
+  sleep(1)
+end
+
+def dry(dryer_type)
+  sample(dryer_type)
+  sleep(1)
+end
+
+2.times do
+  wear(0.5)
+  stain = [true, false].choose
+  if stain == true
+    sample (:ambi_dark_woosh)
+    sleep 1
+  else
+    sample (:ambi_lunar_land)
+    wash(60)
+    dry(:ambi_choir)
+  end
+  
+  2.times do
+    wear(2)
+    stain = [true, false].choose
+    if stain == true
+      play (110)
+    else
+      play (55)
+      wash(70)
+      dry(:ambi_haunted_hum)
+    end
+  end
+end
