@@ -13,7 +13,7 @@ def dry(dryer_type)
   sleep(1)
 end
 
-2.times do
+4.times do
   wear(0.5)
   stain = [true, false].choose
   if stain == true
